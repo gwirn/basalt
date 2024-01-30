@@ -11,8 +11,8 @@ use std::str::FromStr;
 use std::thread;
 use std::time::Duration;
 
-fn parse_map_file(file_path: &str) -> HashMap<Vec<Keycode>, Vec<String>> {
-    let mut shortcut_map: HashMap<Vec<Keycode>, Vec<String>> = HashMap::new();
+fn parse_map_file(file_path: &str) -> HashMap<Vec<String>, Vec<String>> {
+    let mut shortcut_map: HashMap<Vec<String>, Vec<String>> = HashMap::new();
     let file = File::open(file_path).expect("Couldn't read map file");
     let buffer = BufReader::new(file).lines();
     'outer: for (ci, i) in buffer.enumerate() {
@@ -32,13 +32,13 @@ fn parse_map_file(file_path: &str) -> HashMap<Vec<Keycode>, Vec<String>> {
                 continue;
             };
             // the shortcut (key)
-            let shortcut = kv_line[0].split('-').collect::<Vec<&str>>();
-            //  shortcut.sort();
-            let mut shortcut_kc: Vec<Keycode> = Vec::new();
+            let mut shortcut = kv_line[0].split('-').collect::<Vec<&str>>();
+            shortcut.sort();
+            let mut shortcut_kc: Vec<String> = Vec::new();
             // create keycode vector
             for kc in shortcut {
                 match Keycode::from_str(kc) {
-                    Ok(k) => shortcut_kc.push(k),
+                    Ok(k) => shortcut_kc.push(k.to_string()),
                     Err(e) => {
                         eprintln!("{:?}", e);
                         eprintln!("Invalid keycode [{}] in line [{}] - skipping... ", kc, ci);
@@ -77,7 +77,8 @@ fn main() {
     loop {
         let keys = device_state.get_keys();
         if keys != prev_keys {
-            // let keys = keys.iter().map(|x| x.to_string()).collect::<Vec<String>>().sort();
+            let mut keys = keys.iter().map(|x| x.to_string()).collect::<Vec<String>>();
+            keys.sort();
             if let Some(command) = mapped.get(&keys) {
                 match Command::new(&command[0]).arg(&command[1]).spawn() {
                     Ok(_f) => {}
