@@ -1,6 +1,6 @@
-#Basalt 🪨
+# Basalt 🪨
 
-*key**B**o**A**rd **S**hortcut m**A**ping p**L**a**T**form*
+*key**B**o**A**rd **S**hortcut m**A**pping p**L**a**T**form*
 
 Create hotkeys to launch programs or scripts that perform a range of different task.
 
