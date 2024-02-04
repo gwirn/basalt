@@ -3,6 +3,13 @@
 version = 3
 
 [[package]]
+name = "basalt"
+version = "0.1.0"
+dependencies = [
+ "device_query",
+]
+
+[[package]]
 name = "core-foundation"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -72,13 +79,6 @@ name = "readmouse"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "be105c72a1e6a5a1198acee3d5b506a15676b74a02ecd78060042a447f408d94"
-
-[[package]]
-name = "shortkey"
-version = "0.1.0"
-dependencies = [
- "device_query",
-]
 
 [[package]]
 name = "windows"
