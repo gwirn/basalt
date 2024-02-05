@@ -4,6 +4,11 @@
 
 Create hotkeys to launch programs or scripts that perform a range of different tasks.
 
+## Installation
+[Install rust and cargo](https://www.rust-lang.org/tools/install)
+
+Run `cargo build --release` to create a binary of the program.
+
 ## Configuration
 The configuration file where the keymaps are defined must be saved at
 ```sh
@@ -24,3 +29,5 @@ basalt_pid=$!
 echo $basalt_pid >> basalt.pid
 ```
 If this is added to a bash file and executed, it will launch Basalt in the background and save the process ID in 'basalt.pid'. 
+## OS
+Tested on macOS Sonoma and Ubuntu 22.04
