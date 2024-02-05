@@ -97,7 +97,7 @@ fn main() {
                 match Command::new(&command[0]).arg(&command[1]).spawn() {
                     Ok(_f) => {}
                     Err(e) => {
-                        println!("{:?}", e)
+                        eprintln!("{:?}", e)
                     }
                 }
             }
