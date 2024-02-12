@@ -4,6 +4,7 @@
 
 Create hotkeys to launch programs or scripts that perform a range of different tasks.
 
+![TEST](https://github.com/gwirn/basalt/actions/workflows/rust.yml/badge.svg)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE.md)
 <a title="Code Size" target="_blank" href="https://github.com/gwirn/basalt"><img src="https://img.shields.io/github/languages/code-size/gwirn/basalt"></a>
 
