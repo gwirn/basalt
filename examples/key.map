@@ -1,3 +1,3 @@
 # keycode,maps
-LAlt-LControl-LShift-Meta-S = [ osascript, PATH/TO/$HOME.config/basalt/examples/safari.scpt ]
-LAlt-LControl-LShift-Meta-F = [ bash, PATH/TO/$HOME.config/basalt/examples/firefox.sh ]
+LAlt-LControl-LShift-S = [ osascript, PATH/TO/$HOME.config/basalt/examples/safari.scpt ]
+LAlt-LControl-LShift-F = [ bash, PATH/TO/$HOME.config/basalt/examples/firefox.sh ]
