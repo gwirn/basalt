@@ -15,7 +15,7 @@ use std::time::Duration;
 /// Lines starting with a '#' will be ignored and can be used as comments.
 /// Keymaps need the exact structure like:
 /// KeyCode-KeyCode = [ program, command ]
-/// L-T = [ touch, myTestFile.txt]
+/// L-T = [ touch, myTestFile.txt ]
 /// :parameter
 ///     *   file_path: path to the key.map file
 /// :return
