@@ -18,7 +18,7 @@ The configuration file where the keymaps are defined must be saved at
 ```sh
 $HOME/.config/basalt/key.map
 ```
-The file ignores `#` as comments. You can set shortcuts as `KeyCode-KeyCode = [ command, argument ]`. You can find example scripts and a key.map 
+The file ignores `#` as comments. You can set shortcuts as `KeyCode-KeyCode = [ command, argument ]`. You can find example scripts and a key.map
  [here](https://github.com/gwirn/basalt/tree/master/examples). Malformatted lines will be ignored. You can find the keycodes to use [here](https://github.com/ostrosco/device_query/blob/b5ba13089c611b1deb3a6804e1f3032301d0fd5d/src/keymap.rs#L9).
 
 ## Usage
@@ -34,7 +34,7 @@ else
     echo "Basalt is already running"
 fi
 ```
-If this is added to a bash file and executed, it will launch Basalt in the background and save the process ID in 'basalt.pid'. 
+If this is added to a bash file and executed, it will launch Basalt in the background and save the process ID in 'basalt.pid'.
 
 A possible bash script to stop basalt would then be:
 ```bash
