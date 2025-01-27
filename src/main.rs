@@ -1,25 +1,25 @@
 use device_query::{DeviceQuery, DeviceState, Keycode};
-use std::collections::HashMap;
-use std::env;
-use std::fs::File;
-use std::io::prelude::*;
-use std::io::BufReader;
-
-use std::path::PathBuf;
-use std::process::Command;
-use std::str::FromStr;
-use std::thread;
-use std::time::Duration;
+use std::{
+    collections::HashMap,
+    env,
+    fs::File,
+    io::{prelude::*, BufReader},
+    path::PathBuf,
+    process::Command,
+    str::FromStr,
+    thread,
+    time::Duration,
+};
 
 /// Parser for the config file
 /// Lines starting with a '#' will be ignored and can be used as comments.
 /// Keymaps need the exact structure like:
-/// KeyCode-KeyCode = [ program, command ]
-/// L-T = [ touch, myTestFile.txt ]
+/// `KeyCode-KeyCode = [ program, command ]`
+/// `L-T = [ touch, myTestFile.txt ]`
 /// :parameter
-///     *   file_path: path to the key.map file
+///     *   `file_path`: path to the key.map file
 /// :return
-///     *   shortcut_map: map containing shortcuts and commands  
+///     *   `shortcut_map`: map containing shortcuts and commands
 fn parse_map_file(file_path: &str) -> HashMap<Vec<String>, Vec<String>> {
     let mut shortcut_map: HashMap<Vec<String>, Vec<String>> = HashMap::new();
     let file = File::open(file_path).expect("Couldn't read map file");
@@ -74,7 +74,7 @@ fn main() {
     //  construct the file path to $HOME/.config/basalt/key.map
     let home_path = env::var_os("HOME").expect("$HOME is not defined in this environment");
     let home_path = home_path.to_str().expect("Cannt convert $HOME bath");
-    let mut base_path: PathBuf = [&home_path, ".config", "basalt"].iter().collect();
+    let mut base_path: PathBuf = [home_path, ".config", "basalt"].iter().collect();
     base_path.extend(&["key.map"]);
     // get keymaps
     let mapped = parse_map_file(
